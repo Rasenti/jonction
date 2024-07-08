@@ -1,13 +1,10 @@
 {
     "controllers": {
-        "@symfony/ux-turbo": {
-            "turbo-core": {
-                "enabled": true,
-                "fetch": "eager"
-            },
-            "mercure-turbo-stream": {
-                "enabled": false,
-                "fetch": "eager"
+        "hello_controller": {
+            "enabled": true,
+            "fetch": "lazy",
+            "autoimport": {
+                "default": "symfony/controllers"
             }
         }
     },
