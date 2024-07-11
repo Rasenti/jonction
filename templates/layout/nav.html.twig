@@ -3,25 +3,25 @@
     <div class="navbar p-0">
 
         <div class="logo_container col-lg-2 col-6 m-0">
-            <a href="/">
-                <img class="logo img-fluid" src="/uploads/logo.svg" alt="Logo">
+            <a href="{{ path('app_home') }}">
+                <img class="logo img-fluid" src="{{ asset('uploads/logo.svg') }}" alt="Logo">
             </a>
         </div>
 
         <ul class="navitems d-flex col-lg-8">
-            <li class="btn_navbar"><a href="/index.php">Accueil</a></li>
-            <li class="btn_navbar"><a href="/encyclopedie.php">Encyclopédie</a></li>
+            <li class="btn_navbar"><a href="{{ path('app_home') }}">Accueil</a></li>
+            <li class="btn_navbar"><a href="{{ path('app_compendium') }}">Encyclopédie</a></li>
             {% if is_granted("ROLE_ADMIN") %}
-                <li class="btn_navbar"><a href="/admin.php">Administration</a></li>
+                <li class="btn_navbar"><a href="{{ path('admin_dashboard') }}">Administration</a></li>
             {% endif %}
 
         </ul>
         <div class="button_container col-lg-2 col-6 mr-2">
             {% if app.user %}
                 <p>{{ app.user.email }}</p>
-                <a href="/login/logout.php"><button class="connect">Déconnexion</button></a>
+                <a id="logoutBtn" href="{{ path('app_logout') }}"><button class="connect">Déconnexion</button></a>
             {% else %}
-                <a href="/login/login.php"><button class="connect">Connexion</button></a>
+                <li><button id="loginBtn" class="connect">Connexion</button></li>
             {% endif %}
         </div>
     </div>

@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="FR">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
 
@@ -19,12 +14,19 @@
             {% include 'layout/nav.html.twig' %}
         {% endblock %}
 
+        {% include 'security/login.html.twig' %}
+
         <div class="content">
             {% block body %}{% endblock %}
         </div>
 
         {% block footer %}
             {% include 'layout/footer.html.twig' %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </body>
 </html>
