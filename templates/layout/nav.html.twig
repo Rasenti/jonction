@@ -1,25 +1,25 @@
-<header class="container-fluid p-0">
+<header class="w-full bg-theme-light overflow-hidden max-h-[600px]">
 
-    <div class="navbar p-0">
+    <div class="flex items-center w-4/5 mx-auto">
 
-        <div class="logo_container col-lg-2 col-6 m-0">
-            <a href="{{ path('app_home') }}">
-                <img class="logo img-fluid" src="{{ asset('uploads/logo.svg') }}" alt="Logo">
+        <div class="flex justify-center w-1/6 p-0 m-0">
+            <a href="{{ path('app_home') }}" class="flex justify-center w-full">
+                <img class="w-1/2 p-4 hover:cursor-pointer" src="{{ asset('uploads/logo.svg') }}" alt="Logo">
             </a>
         </div>
 
-        <ul class="navitems d-flex col-lg-8">
-            <li class="btn_navbar"><a href="{{ path('app_home') }}">Accueil</a></li>
-            <li class="btn_navbar"><a href="{{ path('app_compendium') }}">Encyclopédie</a></li>
+        <ul class="flex list-none w-2/3 m-0">
+            <li class="m-8"><a href="{{ path('app_home') }}" class="text-gray-700 no-underline">Accueil</a></li>
+            <li class="m-8"><a href="{{ path('app_compendium') }}" class="text-gray-700 no-underline">Encyclopédie</a></li>
             {% if is_granted("ROLE_ADMIN") %}
-                <li class="btn_navbar"><a href="{{ path('admin_dashboard') }}">Administration</a></li>
+                <li class="m-8"><a href="{{ path('admin_dashboard') }}" class="text-gray-700 no-underline">Administration</a></li>
             {% endif %}
-
         </ul>
-        <div class="button_container col-lg-2 col-6 mr-2">
+
+        <div class="flex items-baseline justify-end w-1/6 mr-8">
             {% if app.user %}
-                <p>{{ app.user.email }}</p>
-                <a id="logoutBtn" href="{{ path('app_logout') }}"><button class="connect theme-button">Déconnexion</button></a>
+                <p class="p-4">{{ app.user.email }}</p>
+                <a id="logoutBtn" href="{{ path('app_logout') }}" class="mr-8"><button class="connect theme-button">Déconnexion</button></a>
             {% else %}
                 <li><button id="loginBtn" class="connect theme-button">Connexion</button></li>
             {% endif %}
