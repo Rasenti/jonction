@@ -12,7 +12,7 @@ main {
     font-family: 'Alegreya',Georgia,"Times New Roman",serif;
 }
 
-button {
+.theme-button {
     background-color: #2dedb9;
     text-transform: uppercase;
     font-weight: 500;
@@ -24,7 +24,7 @@ button {
     color: #2d2d2d;
 }
 
-button:hover {
+.theme-button:hover {
     background-color: #26cfa2;
 }
 

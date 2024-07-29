@@ -8,6 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "encore dev",
+    "dev-server": "encore dev-server --hot",
     "build": "encore production"
   },
   "keywords": [],
@@ -24,6 +25,7 @@
     "tailwindcss": "^3.4.4",
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.3",
+    "webpack-dev-server": "^5.0.4",
     "webpack-notifier": "^1.15.0"
   },
   "dependencies": {

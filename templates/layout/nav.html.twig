@@ -19,9 +19,9 @@
         <div class="button_container col-lg-2 col-6 mr-2">
             {% if app.user %}
                 <p>{{ app.user.email }}</p>
-                <a id="logoutBtn" href="{{ path('app_logout') }}"><button class="connect">Déconnexion</button></a>
+                <a id="logoutBtn" href="{{ path('app_logout') }}"><button class="connect theme-button">Déconnexion</button></a>
             {% else %}
-                <li><button id="loginBtn" class="connect">Connexion</button></li>
+                <li><button id="loginBtn" class="connect theme-button">Connexion</button></li>
             {% endif %}
         </div>
     </div>

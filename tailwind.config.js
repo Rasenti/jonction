@@ -5,7 +5,14 @@ module.exports = {
     './assets/**/*.js'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'theme-dark': '#2d2d2d',
+        'theme-light': '#f6f6f6',
+        'theme-aqua': '#2dedb9',
+        'theme-aqua-darker': '#26cfa2',
+      },
+    },
   },
   plugins: [],
 }
