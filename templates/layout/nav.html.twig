@@ -1,4 +1,4 @@
-<header class="w-full bg-theme-light overflow-hidden max-h-[600px]">
+<header class="w-full bg-theme-darker overflow-hidden max-h-[600px]">
 
     <div class="flex items-center w-4/5 mx-auto">
 
@@ -9,10 +9,10 @@
         </div>
 
         <ul class="flex list-none w-2/3 m-0">
-            <li class="m-8"><a href="{{ path('app_home') }}" class="text-gray-700 no-underline">Accueil</a></li>
-            <li class="m-8"><a href="{{ path('app_compendium') }}" class="text-gray-700 no-underline">Encyclopédie</a></li>
+            <li class="m-8"><a href="{{ path('app_home') }}" class="text-theme-light no-underline">Accueil</a></li>
+            <li class="m-8"><a href="{{ path('app_compendium') }}" class="text-theme-light no-underline">Encyclopédie</a></li>
             {% if is_granted("ROLE_ADMIN") %}
-                <li class="m-8"><a href="{{ path('admin_dashboard') }}" class="text-gray-700 no-underline">Administration</a></li>
+                <li class="m-8"><a href="{{ path('admin_dashboard') }}" class="text-theme-light no-underline">Administration</a></li>
             {% endif %}
         </ul>
 
@@ -21,7 +21,7 @@
                 <p class="p-4">{{ app.user.email }}</p>
                 <a id="logoutBtn" href="{{ path('app_logout') }}" class="mr-8"><button class="connect theme-button">Déconnexion</button></a>
             {% else %}
-                <li><button id="loginBtn" class="connect theme-button">Connexion</button></li>
+                <ul><button id="loginBtn" class="connect theme-button">Connexion</button></ul>
             {% endif %}
         </div>
     </div>
