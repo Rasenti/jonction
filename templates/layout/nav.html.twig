@@ -1,4 +1,4 @@
-<header class="w-full bg-theme-darker overflow-hidden max-h-[600px]">
+<header class="w-full bg-theme-darker text-theme-light overflow-hidden max-h-[600px]">
 
     <div class="flex items-center w-4/5 mx-auto">
 
@@ -9,10 +9,10 @@
         </div>
 
         <ul class="flex list-none w-2/3 m-0">
-            <li class="m-8"><a href="{{ path('app_home') }}" class="text-theme-light no-underline">Accueil</a></li>
-            <li class="m-8"><a href="{{ path('app_compendium') }}" class="text-theme-light no-underline">Encyclopédie</a></li>
+            <li class="m-8"><a href="{{ path('app_home') }}" class="no-underline">Accueil</a></li>
+            <li class="m-8"><a href="{{ path('app_compendium') }}" class="no-underline">Encyclopédie</a></li>
             {% if is_granted("ROLE_ADMIN") %}
-                <li class="m-8"><a href="{{ path('admin_dashboard') }}" class="text-theme-light no-underline">Administration</a></li>
+                <li class="m-8"><a href="{{ path('app_admin') }}" class="no-underline">Administration</a></li>
             {% endif %}
         </ul>
 
