@@ -60,6 +60,11 @@ Encore
         };
     })
     .enableSassLoader()
+    .configureDevServerOptions(options => {
+        options.hot = true;
+        options.liveReload = true;
+        options.watchFiles = ['templates/**/*.html.twig', 'src/**/*.php'];
+    })
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
@@ -72,6 +77,6 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    .autoProvidejQuery()
+    // .autoProvidejQuery()
 
 module.exports = Encore.getWebpackConfig();

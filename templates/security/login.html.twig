@@ -1,0 +1,39 @@
+<div id="loginModal" class="fixed z-10 inset-0 overflow-y-auto hidden">
+    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div id="modalBackdrop" class="fixed inset-0 bg-gray-500 opacity-75"></div>
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        <div id="modalContent" class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+            <div class="bg-theme-dark sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:flex-row-reverse">
+                    <button type="button" class="w-full inline-flex justify-center px-2 text-lg font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm close">
+                        X
+                    </button>
+                </div>
+                <div class="flex justify-center">
+                    <div class="mt-3 text-center sm:mt-0 sm:ml-4">
+                        <h3 class="text-2xl leading-6 font-medium text-theme-aqua" id="modal-title">
+                            Connexion
+                        </h3>
+                        <div class="mt-4">
+                            <form action="{{ path('app_login') }}" method="post">
+                                <div class="mb-4">
+                                    <label for="_email" class="block text-left text-sm font-medium text-gray-100">Email</label>
+                                    <input type="text" id="_email" name="_email" required class="mt-1 p-2 block w-full shadow-sm text-theme-dark sm:text-sm border-gray-300 rounded-md">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="_password" class="block text-left text-sm font-medium text-gray-100">Mot de passe</label>
+                                    <input type="password" id="_password" name="_password" required class="mt-1 p-2 block w-full text-theme-dark shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                </div>
+                                <div class="mt-4 mb-4">
+                                    <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-theme-aqua text-base font-medium text-theme-dark hover:bg-theme-aqua-darker focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:text-sm">
+                                        Se connecter
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

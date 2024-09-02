@@ -1,3 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-    background-color: skyblue;
+    background-color: #2d2d2d;
+    color: #f6f6f6;
+}
+
+/* GLOBAL */
+main {
+    font-family: 'Alegreya',Georgia,"Times New Roman",serif;
+    color: #f6f6f6;
+}
+
+.theme-button {
+    background-color: #2dedb9;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    padding: 10px 20px;
+    color: #2d2d2d;
+    transition: all 300ms ease 0ms;
+    box-shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.5),
+                0 4px 9px rgba(0, 0, 0, 0.3);
+}
+
+.theme-button:hover {
+    background-color: #26cfa2;
+}
+
+.error {
+    color: red;
+    font-weight: 600;
+}
+
+.main_sidebar {
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: 80vh;
+    /* max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden; */
+}
+
+/*BANNER*/
+.banner {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(90deg,rgba(0,0,0,0.75) 0%,rgba(0,0,0,0.2) 100%), url(../uploads/jonction_landscape.png);
+    background-size: cover;
+    height: 40rem;
+    background-position: 0 80%;
+}
+
+.banner_txt {
+    margin: 0px 20rem 0px 20rem;
+    max-width: 40%;
+    font-size: 1.4em;
+    align-self: center;
+    color: #f6f6f6;
+}
+
+.banner_title {
+    max-width: 40%;
+    font-size: 3em;
+    align-self: center;
+    color: #f6f6f6;
+}
+
+/*HOME*/
+section {
+    width: 80%;
+    max-width: 1080px;
+    margin: auto;
+    padding-top: 40px;
+}
+
+h2 {
+    text-align: center;
+}
+
+hr {
+    width: 10%;
+    margin: 1rem auto !important;
+    opacity: .5 !important;
+}
+
+.home_card {
+    height: 523px;
+}
+
+.all_articles {
+    display: flex;
+    justify-content: center;
+    font-size: 1.4em;
+}
+
+.newsletter_banner {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(90deg,rgba(0,0,0,0.75) 0%,rgba(0,0,0,0.2) 100%), url(../uploads/explorecave.jpg);
+    background-size: cover;
+    height: 40rem;
+    background-position: 0 80%;
+    color: #f6f6f6;
+}
+
+.news_text {
+    padding-right: 5rem;
+}
+
+.checkbox:checked{
+    background-color: #2dedb9 !important;
+}
+
+/*LOGIN*/
+.login {
+    height: 80vh;
+}
+
+/*SIDEBAR*/
+.sidebar {
+    background-color: #353434;
+    width: 280px;
+}
+.sidebar hr {
+    color: #f6f6f6;
+    width: 80%;
+}
+
+.nav_highlight {
+    color: #2dedb9 !important;
+}
+
+/*ADMIN*/
+.edit_form {
+    width: 60%;
+    margin: 5% 20%;
+}
+
+th {
+    background-color: #353434 !important;
+    color: #f6f6f6 !important;
+}
+
+/*WIKI*/
+.card_img img {
+    max-width: 100%;
+}
+
+.card {
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 0% !important;
+}
+
+.card_text {
+    padding: 16px 18px;
+}
+.card_text h3 {
+    color: #2dedb9;
+}
+
+.card_text h5 {
+    color: #777777;
+}
+
+.card_text a {
+    color: #777777 !important;
+}
+
+/*ARTICLE*/
+.article .image_container{
+    max-width: 30%;
+    float: right;
+    margin: 1% 1% 5% 5%;
+}
+
+.article h1 {
+    color: #2dedb9;
+    padding: 0 0 20px 0;
+}
+
+/*FOOTER*/
+.footer {
+    background-color: #4f4e4e;
+    color: #f6f6f6;
+    font-family: 'Alegreya',Georgia,"Times New Roman",serif;
+    font-size: small;
+}
+
+.footer_logo {
+    display: flex;
+    max-width: 35%;
+    padding: 1rem;
+}
+
+.footer_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.footer_column a {
+    font-size: x-large;
+    text-decoration: none;
+    color: #f6f6f6 !important;
+}
+
+.copy_tos {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
 }

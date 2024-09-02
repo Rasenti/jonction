@@ -1,12 +1,5 @@
 {
     "controllers": {
-        "hello_controller": {
-            "enabled": true,
-            "fetch": "lazy",
-            "autoimport": {
-                "default": "symfony/controllers"
-            }
-        }
     },
     "entrypoints": []
 }

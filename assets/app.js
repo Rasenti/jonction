@@ -1,4 +1,4 @@
-import './bootstrap.js';
+import './bootstrap';
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -6,6 +6,12 @@ import './bootstrap.js';
  * which should already be in your base.html.twig.
  */
 import './styles/app.css';
-import './styles/tailwind.css';
+import {initModal} from "./js/components/connection-modal";
+import {initBackToTopButton} from "./js/components/back-to-top-button";
+console.log('app.js correctement importé')
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+// Login modal open/close script
+document.addEventListener('DOMContentLoaded', (event) => {
+    initModal();
+    initBackToTopButton()
+});

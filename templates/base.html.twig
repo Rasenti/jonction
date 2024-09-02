@@ -1,19 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="FR">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block nav %}
+            {% include 'layout/nav.html.twig' %}
+        {% endblock %}
+
+        {% include 'security/login.html.twig' %}
+
+        <div class="content">
+            {% block body %}{% endblock %}
+        </div>
+
+        {% block footer %}
+            {% include 'layout/footer.html.twig' %}
         {% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
+
+        <!-- Back to Top Button -->
+        <button id="backToTopBtn" class="fixed bottom-6 right-6 bg-theme-aqua text-theme-dark p-3 rounded-full shadow-lg hover:bg-theme-aqua-darker transition-opacity opacity-0 invisible">
+            <!-- SVG Arrow Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+            </svg>
+        </button>
     </body>
 </html>
