@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Admin - Page{% endblock %}
 
 {% block body %}
 
@@ -8,7 +8,7 @@
         {%  include 'layout/sidebar.html.twig' %}
         <div class="d-flex flex-column w-100">
             <div class="m-4">
-                <a href="/crud/creator.php">
+                <a href="{{ path('admin_page_create') }}">
                     <button>Créer</button>
                 </a>
             </div>
@@ -25,21 +25,26 @@
                     </thead>
 
                     <tbody>
-                        <?php foreach ($fullArticle as $el) { ?>
+                        {% for page in pages %}
                         <tr>
-                            <td><?php echo $el['title']?></td>
-                            <td><?php echo $el['cat_name']?></td>
+                            <td>{{ page.name }}</td>
                             <td>
-                                <a href="editor.php?id=<?php echo $el['id'] ?>">
+                                {% for category in page.categories %}
+                                    {{ category }}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                <a href="{{ path('admin_page_edit', {'id': page.id}) }}">
                                     <img alt="Éditer" src="uploads/editpen.svg"/>
                                 </a>
                             </td>
                             <td>
-                                <a href="/crud/delete.php?id=<?php echo $el['id'] ?>">
-                                    <img alt="Éditer" src="uploads/trashbin.svg"/>
+                                <a href="{{ path('admin_page_delete', {'id': page.id}) }}">
+                                    <img alt="Supprimer" src="uploads/trashbin.svg"/>
                                 </a>
                             </td>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>

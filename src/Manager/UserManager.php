@@ -10,9 +10,9 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 readonly class UserManager
 {
     public function __construct(
-        private readonly EntityManagerInterface $em,
-        private readonly UserRepository $userRepository,
-        private readonly UserPasswordHasherInterface $passwordHasher,
+        private EntityManagerInterface $em,
+        private UserRepository $userRepository,
+        private UserPasswordHasherInterface $passwordHasher,
     ){
     }
 
