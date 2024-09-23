@@ -12,9 +12,8 @@
     <body>
         {% block nav %}
             {% include 'layout/nav.html.twig' %}
+            {% include 'security/login.html.twig' %}
         {% endblock %}
-
-        {% include 'security/login.html.twig' %}
 
         <div class="content">
             {% block body %}{% endblock %}

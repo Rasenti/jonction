@@ -1,34 +1,72 @@
-{% extends 'base.html.twig' %}
-
-{% block sidebar %}
-
-    <div class="sidebar d-flex flex-column flex-shrink-0 p-3">
-
-        <?php if ($title === 'Administration' || $title === 'Nouvel Article' || $title === 'Éditeur') { ?>
-        <a href="admin.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <span class="fs-4">
-                <?php echo 'Administration';
-                        } else { ?>
-            </span>
-                <a href="encyclopedie.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <span class="fs-4">
-                <?php echo 'Encyclopédie' ;
-            } ?>
-            </span>
-        </a>
-
-    <hr>
-
-    <ul class="nav flex-column mb-auto">
-
-    <?php foreach ($categories as $categorie) { ?>
-        <li class="nav-item">
-            <a href="categorie.php?name=<?php echo $categorie['cat_name']?>" class="nav-link <?php echo ($title === $categorie['cat_name']) ? 'nav_highlight' : 'text-white' ?>" aria-current="page"><?php echo $categorie['cat_name'] ?></a>
-        </li>
-        <?php } ?>
-
-    </ul>
-
+<aside class="min-w-64 bg-theme-dark text-white flex flex-col sticky top-0 h-screen p-6">
+    <!-- Title -->
+    <div class="flex justify-center items-center">
+        <span class="text-xl font-semibold">
+            {% if app.request.attributes.get('_route') in ['admin_dashboard', 'admin_create', 'admin_update'] %}
+                Administration
+            {% else %}
+                Compendium
+            {% endif %}
+        </span>
     </div>
 
-{% endblock %}
+    <hr class="w-3/4 border-theme-light mb-4">
+
+    <!-- Navigation Links -->
+    <nav class="flex-1">
+        <ul class="space-y-2">
+{#                {% for category in categories %}#}
+{#                    <li>#}
+{#                        <a href="{{ path('app_compendium', { 'id': category.id }) }}"#}
+{#                           class="block py-2 px-3 rounded-md#}
+{#                       {{ app.request.attributes.get('_route') == 'app_compendium' and app.request.query.get('id') == category.id ? 'bg-theme-aqua text-white' : 'text-gray-300 hover:bg-theme-aqua hover:text-white' }}">#}
+{#                            {{ category.name }}#}
+{#                        </a>#}
+{#                        <!-- Subcategories -->#}
+{#                        {% if category.getCategories()|length > 0 %}#}
+{#                            <ul class="ml-4 space-y-1 mt-2">#}
+{#                                {% for subCategory in category.getCategories() %}#}
+{#                                    <li>#}
+{#                                        <a href="{{ path('app_compendium', { 'id': subCategory.id }) }}"#}
+{#                                           class="block py-1 px-3 rounded-md#}
+{#                                       {{ app.request.attributes.get('_route') == 'app_compendium' and app.request.query.get('id') == subCategory.id ? 'bg-theme-aqua text-white' : 'text-gray-300 hover:bg-theme-aqua hover:text-white' }}">#}
+{#                                            {{ subCategory.name }}#}
+{#                                        </a>#}
+{#                                    </li>#}
+{#                                {% endfor %}#}
+{#                            </ul>#}
+{#                        {% endif %}#}
+{#                    </li>#}
+{#                {% endfor %}#}
+        </ul>
+    </nav>
+</aside>
+
+{#    <div class="sidebar d-flex flex-column flex-shrink-0 p-3">#}
+
+{#        <?php if ($title === 'Administration' || $title === 'Nouvel Article' || $title === 'Éditeur') { ?>#}
+{#        <a href="admin.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">#}
+{#            <span class="fs-4">#}
+{#                <?php echo 'Administration';#}
+{#                        } else { ?>#}
+{#            </span>#}
+{#                <a href="encyclopedie.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">#}
+{#            <span class="fs-4">#}
+{#                <?php echo 'Encyclopédie' ;#}
+{#            } ?>#}
+{#            </span>#}
+{#        </a>#}
+
+{#    <hr>#}
+
+{#    <ul class="nav flex-column mb-auto">#}
+
+{#    <?php foreach ($categories as $categorie) { ?>#}
+{#        <li class="nav-item">#}
+{#            <a href="categorie.php?name=<?php echo $categorie['cat_name']?>" class="nav-link <?php echo ($title === $categorie['cat_name']) ? 'nav_highlight' : 'text-white' ?>" aria-current="page"><?php echo $categorie['cat_name'] ?></a>#}
+{#        </li>#}
+{#        <?php } ?>#}
+
+{#    </ul>#}
+
+{#    </div>#}
