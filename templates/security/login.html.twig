@@ -24,6 +24,12 @@
                                     <label for="_password" class="block text-left text-sm font-medium text-gray-100">Mot de passe</label>
                                     <input type="password" id="_password" name="_password" required class="mt-1 p-2 block w-full text-theme-dark shadow-sm sm:text-sm border-gray-300 rounded-md">
                                 </div>
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                {% if error %}
+                                    <div class="alert alert-danger">
+                                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                                    </div>
+                                {% endif %}
                                 <div class="mt-4 mb-4">
                                     <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-theme-aqua text-base font-medium text-theme-dark hover:bg-theme-aqua-darker focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:text-sm">
                                         Se connecter
