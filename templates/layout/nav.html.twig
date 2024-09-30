@@ -12,7 +12,7 @@
             <li class="m-8"><a href="{{ path('app_home') }}" class="no-underline">Accueil</a></li>
             <li class="m-8"><a href="{{ path('app_compendium') }}" class="no-underline">Encyclopédie</a></li>
             {% if is_granted("ROLE_ADMIN") %}
-                <li class="m-8"><a href="{{ path('app_admin') }}" class="no-underline">Administration</a></li>
+                <li class="m-8"><a href="{{ path('app_admin_dashboard') }}" class="no-underline">Administration</a></li>
             {% endif %}
         </ul>
 

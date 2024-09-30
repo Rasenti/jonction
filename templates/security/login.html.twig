@@ -17,19 +17,19 @@
                         <div class="mt-4">
                             <form action="{{ path('app_login') }}" method="post">
                                 <div class="mb-4">
-                                    <label for="_email" class="block text-left text-sm font-medium text-gray-100">Email</label>
-                                    <input type="text" id="_email" name="_email" required class="mt-1 p-2 block w-full shadow-sm text-theme-dark sm:text-sm border-gray-300 rounded-md">
+                                    <label for="email" class="block text-left text-sm font-medium text-gray-100">Email</label>
+                                    <input type="email" id="email" name="email" required class="mt-1 p-2 block w-full shadow-sm text-theme-dark sm:text-sm border-gray-300 rounded-md">
                                 </div>
                                 <div class="mb-4">
-                                    <label for="_password" class="block text-left text-sm font-medium text-gray-100">Mot de passe</label>
-                                    <input type="password" id="_password" name="_password" required class="mt-1 p-2 block w-full text-theme-dark shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                    <label for="password" class="block text-left text-sm font-medium text-gray-100">Mot de passe</label>
+                                    <input type="password" id="password" name="password" required class="mt-1 p-2 block w-full text-theme-dark shadow-sm sm:text-sm border-gray-300 rounded-md">
                                 </div>
-                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                                {% if error %}
-                                    <div class="alert alert-danger">
-                                        {{ error.messageKey|trans(error.messageData, 'security') }}
-                                    </div>
-                                {% endif %}
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token('authenticate') }}">
+{#                                {% if error %}#}
+{#                                    <div class="alert alert-danger">#}
+{#                                        {{ error.messageKey|trans(error.messageData, 'security') }}#}
+{#                                    </div>#}
+{#                                {% endif %}#}
                                 <div class="mt-4 mb-4">
                                     <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-theme-aqua text-base font-medium text-theme-dark hover:bg-theme-aqua-darker focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:text-sm">
                                         Se connecter
