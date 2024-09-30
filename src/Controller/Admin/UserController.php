@@ -5,7 +5,6 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Manager\UserManager;
-use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,14 +23,6 @@ class UserController extends AbstractController
     {
         return $this->render('admin/user/list.html.twig', [
             'users' => $this->userManager->findAll(),
-        ]);
-    }
-
-    #[Route('/{id}', name: 'admin_user_show', methods: ['GET'])]
-    public function show(User $user) : Response
-    {
-        return $this->render('admin/user/show.html.twig', [
-            'user' => $user,
         ]);
     }
 
@@ -62,6 +53,15 @@ class UserController extends AbstractController
             'form' => $form,
         ]);
     }
+
+    #[Route('/{id}', name: 'admin_user_show', requirements: ['id' => '\d+'], methods: ['GET'])]
+    public function show(User $user) : Response
+    {
+        return $this->render('admin/user/show.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
 
     #[Route('/{id}/edit', name: 'admin_user_edit', methods: ['GET', 'POST'])]
     public function edit(

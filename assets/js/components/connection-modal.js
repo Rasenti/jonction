@@ -5,18 +5,24 @@ export function initModal() {
     const backdrop = document.getElementById('modalBackdrop');
 
     // Open modal on click on connection
-    btn.onclick = function() {
-        modal.classList.remove('hidden');
+    if (btn && modal) {
+        btn.onclick = function() {
+            modal.classList.remove('hidden');
+        };
     }
 
     // Close modal on click on close button
-    closeBtn.onclick = function() {
-        modal.classList.add('hidden');
+    if (closeBtn && modal) {
+        closeBtn.onclick = function() {
+            modal.classList.add('hidden');
+        };
     }
 
     // Close modal on click outside of it
-    backdrop.onclick = function() {
-        modal.classList.add('hidden');
+    if (backdrop && modal) {
+        backdrop.onclick = function() {
+            modal.classList.add('hidden');
+        };
     }
 
     document.addEventListener('DOMContentLoaded', function () {
