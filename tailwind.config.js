@@ -12,6 +12,9 @@ module.exports = {
         'theme-light': '#f6f6f6',
         'theme-aqua': '#2dedb9',
         'theme-aqua-darker': '#26cfa2',
+        'theme-gray-light': '#464444',
+        'theme-gray-dark': '#353434',
+
       },
     },
   },

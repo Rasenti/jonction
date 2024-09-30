@@ -80,7 +80,7 @@ class UserController extends AbstractController
             } else {
                 $this->userManager->updateUserFromAdmin($user, $plainPassword);
 
-                return $this->redirectToRoute('admin_user_list', [], Response::HTTP_ACCEPTED);
+                return $this->redirectToRoute('admin_user_list');
             }
         }
 

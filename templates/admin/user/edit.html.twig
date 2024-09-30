@@ -3,16 +3,18 @@
 {% block title %}Admin - New{% endblock %}
 
 {% block body %}
-    {%  include 'layout/sidebar.html.twig' %}
-    <h1 class="m-3 text-center">Créer un Utilisateur</h1>
+    <main class="main_sidebar">
+        {%  include 'layout/sidebar.html.twig' %}
+        <h1 class="m-3 text-center">Modifier {{ user.email }}</h1>
 
-    <div class="container-fluid w-50 mt-5">
-        <div class="d-flex flex-column align-items-stretch">
+        <div class="container-fluid w-50 mt-5">
+            <div class="d-flex flex-column align-items-stretch">
 
-            {{ include('admin/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
-            <a class="btn btn-primary" href="{{ path('app_admin_dashboard') }}">Retour à la liste</a>
+                {{ include('admin/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+                <a class="btn btn-primary" href="{{ path('app_admin_dashboard') }}">Retour à la liste</a>
 
+            </div>
         </div>
-    </div>
+    </main>
 
 {% endblock %}
