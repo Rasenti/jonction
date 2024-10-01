@@ -10,7 +10,7 @@ body {
 /* GLOBAL */
 .theme-button {
     background-color: #2dedb9;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-weight: 500;
     font-size: 14px;
     border: none;
