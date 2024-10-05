@@ -131,10 +131,18 @@ hr {
 }
 
 /*ADMIN*/
-.edit_form {
+/* .edit_form {
     width: 60%;
     margin: 5% 20%;
-}
+} */
+ .form-group input, select {
+    color: #2d2d2d;
+    padding: 4px 8px;
+    border-radius: 2px;
+ }
+ .form-group select {
+    text-align: center;
+ }
 
 /*WIKI*/
 .card_img img {

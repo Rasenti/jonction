@@ -38,7 +38,7 @@
                             </td>
                             <td class="px-6 py-1 whitespace-nowrap border-2 border-theme-dark">
                                 {% for role in user.roles %}
-                                    <p>{{ role }}</p>
+                                    <p>{{ role is same as 'ROLE_ADMIN' ? 'Administrateur' : 'Utilisateur'}}</p>
                                 {% endfor %}
                             </td>
                             <td class="px-6 py-1 whitespace-nowrap border-2 border-theme-dark">

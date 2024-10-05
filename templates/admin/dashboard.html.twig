@@ -4,44 +4,24 @@
 
 {% block body %}
 
-    <main class="main_sidebar">
-        {%  include 'layout/sidebar.html.twig' %}
-        <div class="d-flex flex-column w-100">
-            <div class="m-4">
-                <a href="{{ path('admin_page_create') }}">
-                    <button>Créer</button>
+  <main class="flex">
+        {% include 'layout/sidebar.html.twig' %}
+
+        <div class="flex flex-col w-full m-6">
+            <div class="flex pb-6 pl-1">
+                <a href="{{ path('admin_user_list') }}">
+                    <button class="theme-button">Utilisateurs</button>
                 </a>
             </div>
-
-            <div class="m-4 mt-0">
-                <table class="table table-bordered">
-                    <thead class="table_head">
-                        <tr>
-                            <th scope="col">Titre de l'Article</th>
-                            <th scope="col">Catégorie</th>
-                            <th scope="col">Éditer</th>
-                            <th scope="col">Supprimer</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <?php foreach ($fullArticle as $el) { ?>
-                        <tr>
-                            <td><?php echo $el['title']?></td>
-                            <td><?php echo $el['cat_name']?></td>
-                            <td>
-                                <a href="editor.php?id=<?php echo $el['id'] ?>">
-                                    <img alt="Éditer" src="uploads/editpen.svg"/>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="/crud/delete.php?id=<?php echo $el['id'] ?>">
-                                    <img alt="Éditer" src="uploads/trashbin.svg"/>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="flex pb-6 pl-1">
+                <a href="{{ path('admin_page_list') }}">
+                    <button class="theme-button">Pages</button>
+                </a>
+            </div>
+            <div class="flex pb-6 pl-1">
+                <a href="{{ path('admin_category_list') }}">
+                    <button class="theme-button">Catégories</button>
+                </a>
             </div>
         </div>
     </main>
